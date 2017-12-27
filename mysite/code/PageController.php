@@ -1,6 +1,8 @@
 <?php
 
 use SilverStripe\CMS\Controllers\ContentController;
+use Silverstripe\View\ThemeResourceLoader;
+use Silverstripe\View\Requirements;
 
 class PageController extends ContentController
 {
@@ -24,7 +26,15 @@ class PageController extends ContentController
     protected function init()
     {
         parent::init();
-        // You can include any CSS or JS required by your project here.
-        // See: https://docs.silverstripe.org/en/developer_guides/templates/requirements/
+
+        $themeFolder = ThemeResourceLoader::inst()->getPath('arcweb');
+
+        // shared files
+        Requirements::javascript("{$themeFolder}/dist/manifest.js");
+        Requirements::javascript("{$themeFolder}/dist/vendor.js");
+
+        // theme files
+        Requirements::css("{$themeFolder}/dist/main.css");
+        Requirements::javascript("{$themeFolder}/dist/app.js");
     }
 }

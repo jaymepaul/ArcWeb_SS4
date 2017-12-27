@@ -3,5 +3,5 @@ Name: mytheme
 ---
 SilverStripe\View\SSViewer:
   themes:
-    - 'simple'
+    - 'arcweb'
     - '$default'

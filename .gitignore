@@ -1,5 +1,6 @@
 .vagrant
 /silverstripe-cache/
+/node_modules
 /.env
 /vendor/
 /themes/simple/
